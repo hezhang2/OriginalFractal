@@ -34,13 +34,18 @@ public void draw() {
   snowFrac(300,300,theLen,theBran);
 }
 public void snowFrac(float x, float y, float len, int bran) {
-  for (int m=0; m<360; m+=60) {
+  int turn;
+  if(bran%2==0)
+    turn=0;
+  else
+    turn=30;  
+  for (int m=turn; m<360+turn; m+=60) {
     double rad = m*(Math.PI/180);
     line(x, y, x+(float)(Math.cos(rad)*len), y+(float)(Math.sin(rad)*len));
     if (bran>0) {
       snowFrac(x+(float)(Math.cos(rad)*len), 
       y+(float)(Math.sin(rad)*len),
-      len/2.5,
+      len/2.75,
       bran-1);
     }
   }
