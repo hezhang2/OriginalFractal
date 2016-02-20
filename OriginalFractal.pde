@@ -17,7 +17,6 @@ public void draw() {
   }
   double progression = progDeg*(Math.PI/180);
   theFill=225*sin((float)progression);
-  println(Math.abs(theFill));
   if(theBran>3){
     add=false;
   }
